@@ -1,0 +1,7 @@
+lunarrock_*.png ==> opengameart.org/users/cron
+Lunar Rock texture by Cameron 'cron' Fraser is licensed under a Creative Commons Attribution 4.0 International License.
+
+shot01.wav ==> http://freesound.org/people/seeyouinsleep/
+Hope-Flies-High.ogg ==> http://www.newgrounds.com/audio/listen/475809
+
+health-crate01.blend ==> http://www.blendswap.com/user/metalix

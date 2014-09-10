@@ -16,7 +16,6 @@ This game uses assets from third party developers licensed under a Creative Comm
 Those are:
 
 - Cameron 'cron' Fraser (opengameart.org/users/cron lunarrock_*.png)
-- Bryan 'seeyouinsleep' Green (http://freesound.org/people/seeyouinsleep/ shot01.wav)
 - Metalix Studios (http://www.blendswap.com/user/metalix health-crate01.mesh)
 
 Game assets under a Creative Commons By Non-commercial Share alike license:

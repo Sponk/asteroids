@@ -1,0 +1,380 @@
+<Maratis version="3.1">
+
+<Level>
+
+	<properties currentScene="0" />
+
+	<Scene name="Scene-1">
+
+		<script file="../scripts/game.lua" />
+		<properties 
+			data="Static"
+			gravity="0.000000 0.000000 -0.981000"
+			ambientLight="0.023352 0.060135 0.144144" />
+
+		<Light name="Light0">
+			<active value="true" />
+			<transform 
+				position="0.000000 28.688019 1261.731689"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				radius="6000.000000"
+				color="1.000000 1.000000 1.000000"
+				intensity="10.350000"
+				spotAngle="58.000000"
+				spotExponent="0.000000"
+				shadow="true"
+				shadowBias="1.000000"
+				shadowBlur="9.000000"
+				shadowQuality="2048" />
+		</Light>
+		<Camera name="Camera0">
+			<active value="true" />
+			<transform 
+				position="0.000000 -13.072003 472.934509"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				clearColor="0.200000 0.300000 0.400000"
+				ortho="false"
+				fov="70.000000"
+				clippingNear="1.000000"
+				clippingFar="1000.000000"
+				fog="false"
+				fogDistance="0.000000"
+				skyboxTextures="" />
+		</Camera>
+		<Sound name="Music" file="../sounds/Hope-Flies-High.ogg">
+			<active value="true" />
+			<transform 
+				position="0.000000 -13.072003 472.934509"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				loop="true"
+				pitch="1.000000"
+				gain="50.000000"
+				radius="10.000000"
+				rolloff="1.000000"
+				relative="true" />
+		</Sound>
+		<Sound name="Bombhit01" file="../sounds/bombhit01.wav">
+			<active value="true" />
+			<transform 
+				parent="Enemy1"
+				position="0.000000 0.000000 0.000000"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="0.366804 1.000000 0.117462" />
+			<properties 
+				loop="false"
+				pitch="1.000000"
+				gain="50.000000"
+				radius="10.000000"
+				rolloff="1.000000"
+				relative="false" />
+		</Sound>
+		<Entity name="Body" file="../meshs/player.mesh">
+			<BoundingBox min="-0.298981 -0.270950 -0.953389" max="0.506786 0.842665 0.739356" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				parent="Player"
+				position="0.009423 0.153802 0.965909"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="19.036064 51.897099 6.095931" />
+			<properties 
+				invisible="false"
+				shadow="true"
+				occluder="false" />
+		</Entity>
+		<Entity name="Player" file="../meshs/box.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="0.000000 -13.072006 47.264317"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="2.726251 1.000000 8.513401" />
+			<properties 
+				invisible="true"
+				shadow="true"
+				occluder="false" />
+			<physics 
+				shape="Capsule"
+				ghost="false"
+				mass="1.000000"
+				friction="0.500000"
+				restitution="0.000000"
+				linearDamping="0.010000"
+				angularDamping="0.010000"
+				angularFactor="0.000000"
+				linearFactor="0.000000 0.000000 0.000000" />
+		</Entity>
+		<Entity name="GunExit" file="../meshs/box.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				parent="Player"
+				position="5.264139 41.396168 2.595881"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="0.132269 0.360598 0.042357" />
+			<properties 
+				invisible="true"
+				shadow="true"
+				occluder="false" />
+		</Entity>
+		<Entity name="EnemyBody1" file="../meshs/enemy01.mesh">
+			<BoundingBox min="-1.445695 -0.595523 -0.294860" max="0.413319 1.790561 0.616822" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				parent="Enemy1"
+				position="9.026369 4.873047 -1.639139"
+				rotation="90.000000 -0.000000 0.000000"
+				scale="18.080084 5.789794 49.290840" />
+			<properties 
+				invisible="false"
+				shadow="true"
+				occluder="false" />
+		</Entity>
+		<Entity name="Enemy1" file="../meshs/box.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="463.316162 532.110413 -179.365997"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="2.726251 1.000000 8.513401" />
+			<properties 
+				invisible="true"
+				shadow="true"
+				occluder="false" />
+			<physics 
+				shape="Capsule"
+				ghost="false"
+				mass="1.000000"
+				friction="0.000000"
+				restitution="0.000000"
+				linearDamping="0.200000"
+				angularDamping="0.010000"
+				angularFactor="0.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+		<Entity name="SpawnPoint1" file="../meshs/box.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="-24.608147 1737.626221 150.221725"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				invisible="true"
+				shadow="true"
+				occluder="false" />
+		</Entity>
+		<Entity name="DefaultBullet" file="../meshs/bullet01.mesh">
+			<BoundingBox min="-2.155291 -2.155290 -2.155291" max="2.155292 2.155291 2.155291" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="535.374573 532.110413 -179.365997"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				invisible="true"
+				shadow="true"
+				occluder="false" />
+			<physics 
+				shape="Box"
+				ghost="true"
+				mass="0.000000"
+				friction="0.000000"
+				restitution="0.000000"
+				linearDamping="0.200000"
+				angularDamping="0.010000"
+				angularFactor="0.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+		<Entity name="Floor" file="../meshs/lunar_rock.mesh">
+			<BoundingBox min="-8.137191 -8.137193 -0.131764" max="8.137192 8.137191 0.131764" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="0.000000 -227.103119 -53.273804"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="386.306305 386.306305 386.306305" />
+			<properties 
+				invisible="false"
+				shadow="true"
+				occluder="false" />
+			<physics 
+				shape="Box"
+				ghost="false"
+				mass="0.000000"
+				friction="0.500000"
+				restitution="0.000000"
+				linearDamping="0.010000"
+				angularDamping="0.010000"
+				angularFactor="1.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+		<Entity name="SpawnPoint2" file="../meshs/box.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="-24.608147 -2227.275146 150.221725"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				invisible="true"
+				shadow="true"
+				occluder="false" />
+		</Entity>
+		<Entity name="SpawnPoint3" file="../meshs/box.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="1923.243042 -168.269562 150.221725"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				invisible="true"
+				shadow="true"
+				occluder="false" />
+		</Entity>
+		<Entity name="SpawnPoint4" file="../meshs/box.mesh">
+			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="-2055.533936 -168.269562 150.221725"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				invisible="true"
+				shadow="true"
+				occluder="false" />
+		</Entity>
+		<Entity name="WeaponCrate" file="../meshs/weapon-crate01.mesh">
+			<BoundingBox min="-2.183614 -1.000000 0.000000" max="2.183614 1.000000 1.246818" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="0.000000 81.648102 -168.844223"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="15.087261 15.087261 15.087261" />
+			<properties 
+				invisible="false"
+				shadow="true"
+				occluder="false" />
+			<physics 
+				shape="Box"
+				ghost="false"
+				mass="1.000000"
+				friction="0.500000"
+				restitution="0.000000"
+				linearDamping="0.010000"
+				angularDamping="0.010000"
+				angularFactor="1.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+		<Entity name="HealthCrate" file="../meshs/health-crate01.mesh">
+			<BoundingBox min="-1.036660 -2.036660 -1.036660" max="1.060565 2.036660 1.036660" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="-59.429287 81.648102 -237.404770"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="13.608834 13.608834 13.608834" />
+			<properties 
+				invisible="false"
+				shadow="true"
+				occluder="false" />
+			<physics 
+				shape="Box"
+				ghost="false"
+				mass="1.000000"
+				friction="0.500000"
+				restitution="0.000000"
+				linearDamping="0.010000"
+				angularDamping="0.010000"
+				angularFactor="1.000000"
+				linearFactor="1.000000 1.000000 1.000000" />
+		</Entity>
+
+	</Scene>
+	<Scene name="GuiScene">
+
+		<properties 
+			data="Static"
+			gravity="0.000000 0.000000 -0.981000"
+			ambientLight="0.000000 0.000000 0.000000" />
+
+		<Camera name="Camera0">
+			<active value="true" />
+			<transform 
+				position="50.251507 -4.806229 437.475464"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="1.000000 1.000000 1.000000" />
+			<properties 
+				clearColor="0.200000 0.300000 0.400000"
+				ortho="true"
+				fov="150.000000"
+				clippingNear="1.000000"
+				clippingFar="1000.000000"
+				fog="false"
+				fogDistance="0.000000"
+				skyboxTextures="" />
+		</Camera>
+		<Text name="ScoreLabel" file="../fonts/Ricasso-Regular.ttf">
+			<active value="true" />
+			<transform 
+				position="-42.441170 62.948120 303.113220"
+				rotation="180.000000 0.000000 0.000000"
+				scale="0.442233 0.442233 0.442233" />
+			<properties 
+				size="16.000000"
+				align="Left"
+				color="1.000000 1.000000 1.000000 1.000000" />
+			<textData>
+				<![CDATA[<Score>]]>
+			</textData>
+		</Text>
+		<Text name="LifeLabel" file="../fonts/Ricasso-Regular.ttf">
+			<active value="true" />
+			<transform 
+				position="144.426086 62.948120 303.113220"
+				rotation="180.000000 0.000000 0.000000"
+				scale="0.442233 0.442233 0.442233" />
+			<properties 
+				size="16.000000"
+				align="Right"
+				color="1.000000 0.425747 0.171053 1.000000" />
+			<textData>
+				<![CDATA[<Life>]]>
+			</textData>
+		</Text>
+		<Entity name="GameOverSign" file="../meshs/game-over.mesh">
+			<BoundingBox min="-3.522388 -0.500000 0.000000" max="3.522388 0.500000 0.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="55.866592 23.685986 303.113220"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="16.987358 16.987358 16.987358" />
+			<properties 
+				invisible="false"
+				shadow="true"
+				occluder="false" />
+		</Entity>
+
+	</Scene>
+
+</Level>
+
+</Maratis>

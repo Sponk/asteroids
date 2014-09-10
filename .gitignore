@@ -1,0 +1,8 @@
+*.exe
+*.dll
+*.so*
+MaratisPlayer
+*.lnk
+maratis_log.txt
+published
+.directory
