@@ -29,6 +29,9 @@
 dofile("libobject.lua")
 dofile("levels.lua")
 
+enablePostEffects()
+loadPostEffectsShader("shaders/pfx.vert", "shaders/pfx.frag")
+
 local player = getObject("Player")
 local body = getObject("Body")
 local camera = getObject("Camera0")
@@ -38,6 +41,12 @@ local gui_scene = getScene("GuiScene")
 local score_label = getObject(gui_scene, "ScoreLabel")
 local life_label = getObject(gui_scene, "LifeLabel")
 local game_over_label = getObject(gui_scene, "GameOverSign")
+
+addPostEffectsUniformFloat("farPlane", getCameraFar(camera))
+addPostEffectsUniformFloat("nearPlane", getCameraNear(camera))
+addPostEffectsUniformFloat("blurStrength", 0)
+addPostEffectsUniformFloat("gamma", 1.1)
+addPostEffectsUniformFloat("contrastFactor", 1.0)
 
 deactivate(game_over_label)
 
@@ -143,6 +152,9 @@ function onSceneUpdate()
     if playerData.life <= 0 then
         activate(game_over_label)
         playerData.life = 0
+        setPostEffectsUniformFloat("blurStrength", 0.4)
+        setPostEffectsUniformFloat("gamma", 0.1)
+        setPostEffectsUniformFloat("contrastFactor", 1.3)
         return
     end   
     

@@ -331,6 +331,19 @@
 				fogDistance="0.000000"
 				skyboxTextures="" />
 		</Camera>
+		<Entity name="GameOverSign" file="../meshs/game-over.mesh">
+			<BoundingBox min="-3.522388 -0.500000 0.000000" max="3.522388 0.500000 0.000000" />
+			<anim id="0" />
+			<active value="true" />
+			<transform 
+				position="55.866592 23.685986 303.113220"
+				rotation="0.000000 -0.000000 0.000000"
+				scale="16.987358 16.987358 16.987358" />
+			<properties 
+				invisible="false"
+				shadow="true"
+				occluder="false" />
+		</Entity>
 		<Text name="ScoreLabel" file="../fonts/Ricasso-Regular.ttf">
 			<active value="true" />
 			<transform 
@@ -359,19 +372,6 @@
 				<![CDATA[<Life>]]>
 			</textData>
 		</Text>
-		<Entity name="GameOverSign" file="../meshs/game-over.mesh">
-			<BoundingBox min="-3.522388 -0.500000 0.000000" max="3.522388 0.500000 0.000000" />
-			<anim id="0" />
-			<active value="true" />
-			<transform 
-				position="55.866592 23.685986 303.113220"
-				rotation="0.000000 -0.000000 0.000000"
-				scale="16.987358 16.987358 16.987358" />
-			<properties 
-				invisible="false"
-				shadow="true"
-				occluder="false" />
-		</Entity>
 
 	</Scene>
 
