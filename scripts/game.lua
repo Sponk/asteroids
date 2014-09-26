@@ -97,7 +97,7 @@ local items_on_field = {}
 
 function getRandomVector3(max)
     if max == 0 then return vec3(0,0,0) end
-    return vec3(math.random(max), math.random(max), math.random(max))
+    return vec3(math.random(max*100)/100.0, math.random(max*100)/100.0, math.random(max*100)/100.0)
 end
 
 function pointPair2Degrees(startingPoint, endingPoint)
@@ -324,7 +324,7 @@ function onSceneUpdate()
                     if isCollisionBetween(bullet_data.bullet, enemies_on_field[j].enemy) then
                         enemies_on_field[j].life = enemies_on_field[j].life - playerData.bullet_power
                         
-                        playSound(enemies_on_field[j].sound)       
+                        --playSound(enemies_on_field[j].sound)       
                         
                         playerData.score = playerData.score + enemies_on_field[j].score * playerData.score_multiplier
             
