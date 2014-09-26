@@ -15,15 +15,15 @@
 		<Light name="Light0">
 			<active value="true" />
 			<transform 
-				position="0.000000 28.688019 1261.731689"
+				position="0.000000 28.688019 1757.295166"
 				rotation="0.000000 -0.000000 0.000000"
 				scale="1.000000 1.000000 1.000000" />
 			<properties 
-				radius="6000.000000"
+				radius="7000.000000"
 				color="1.000000 1.000000 1.000000"
-				intensity="10.350000"
-				spotAngle="58.000000"
-				spotExponent="0.000000"
+				intensity="8.600000"
+				spotAngle="66.000000"
+				spotExponent="0.020000"
 				shadow="true"
 				shadowBias="1.000000"
 				shadowBlur="4.000000"
@@ -37,6 +37,7 @@
 				scale="1.000000 1.000000 1.000000" />
 			<properties 
 				clearColor="0.103604 0.155405 0.207207"
+				fogColor="1.000000 1.000000 1.000000"
 				ortho="false"
 				fov="70.000000"
 				clippingNear="1.000000"
@@ -193,11 +194,11 @@
 				scale="1.000000 1.000000 1.000000" />
 			<properties 
 				invisible="true"
-				shadow="true"
+				shadow="false"
 				occluder="false" />
 			<physics 
 				shape="Box"
-				ghost="true"
+				ghost="false"
 				mass="0.000000"
 				friction="0.000000"
 				restitution="0.000000"
@@ -635,6 +636,7 @@
 				scale="1.000000 1.000000 1.000000" />
 			<properties 
 				clearColor="0.200000 0.300000 0.400000"
+				fogColor="1.000000 1.000000 1.000000"
 				ortho="true"
 				fov="150.000000"
 				clippingNear="1.000000"

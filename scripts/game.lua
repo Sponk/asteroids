@@ -29,8 +29,8 @@
 dofile("libobject.lua")
 dofile("levels.lua")
 
---enablePostEffects()
---loadPostEffectsShader("shaders/pfx.vert", "shaders/pfx.frag")
+enablePostEffects()
+loadPostEffectsShader("shaders/pfx.vert", "shaders/pfx.frag")
 
 local player = getObject("Player")
 local body = getObject("Body")
