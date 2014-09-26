@@ -6,3 +6,7 @@ MaratisPlayer
 maratis_log.txt
 published
 .directory
+*.blend1
+*.blend2
+*.blend3
+*.a

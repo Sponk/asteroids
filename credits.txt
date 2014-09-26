@@ -4,4 +4,6 @@ Lunar Rock texture by Cameron 'cron' Fraser is licensed under a Creative Commons
 shot01.wav ==> http://freesound.org/people/seeyouinsleep/
 Hope-Flies-High.ogg ==> http://www.newgrounds.com/audio/listen/475809
 
-health-crate01.blend ==> http://www.blendswap.com/user/metalix
+health-crate01.blend 
+floor-panel.blend
+==> http://www.blendswap.com/user/metalix

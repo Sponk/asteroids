@@ -29,13 +29,14 @@
 dofile("libobject.lua")
 dofile("levels.lua")
 
-enablePostEffects()
-loadPostEffectsShader("shaders/pfx.vert", "shaders/pfx.frag")
+--enablePostEffects()
+--loadPostEffectsShader("shaders/pfx.vert", "shaders/pfx.frag")
 
 local player = getObject("Player")
 local body = getObject("Body")
 local camera = getObject("Camera0")
 local gun_exit = getObject("GunExit")
+local item_detector = getObject("ItemDetector")
 
 local gui_scene = getScene("GuiScene")
 local score_label = getObject(gui_scene, "ScoreLabel")
@@ -64,6 +65,7 @@ DEG_TO_RAD = 0.01745329238
 
 local playerData = {
     movement_speed = 2.5,
+    --movement_speed = 30,
     bullet_power = 1,
     default_bullet = getObject("DefaultBullet"),
     bullet_speed = 4,
@@ -162,8 +164,8 @@ function onSceneUpdate()
         mouse_controls = true
     elseif onKeyDown("JOY1_BUTTON_A") or onKeyDown("JOY1_BUTTON_DPADLEFT") or onKeyDown("JOY1_BUTTON_DPADRIGHT") or onKeyDown("JOY1_BUTTON_DPADUP") or onKeyDown("JOY1_BUTTON_DPADDOWN") then
         mouse_controls = false
-    end
-    
+    end   
+   
     -- Rotate to face mouse cursor
     if mouse_controls then
         local mx = getAxis("MOUSE_X")
@@ -189,7 +191,7 @@ function onSceneUpdate()
             rotate(player, {0,0,1}, 3*-getAxis("JOY1_AXIS_LEFTX"))
         end
     end
-    
+        
     -- Translate according to input
     if isKeyPressed("W") or isKeyPressed("JOY1_BUTTON_DPADUP") then
         translate(player, {0,playerData.movement_speed,0}, "local")
@@ -199,7 +201,7 @@ function onSceneUpdate()
     
     if getAxis("JOY1_AXIS_LEFTY") > 0.3 or getAxis("JOY1_AXIS_LEFTY") < -0.3 then
             translate(player, {0,getAxis("JOY1_AXIS_LEFTY")*-playerData.movement_speed,0}, "local")
-    end 
+    end    
     
     local playerPosition = getPosition(player)
     setPosition(camera, playerPosition+{0,0,400})
@@ -234,7 +236,7 @@ function onSceneUpdate()
     -- Update all items
     for k = #items_on_field, 1, -1 do
         local item = items_on_field[k]
-        if isCollisionBetween(player, item.model) then
+        if isCollisionBetween(item_detector, item.model) then
             item_callbacks[item.item_type]()
             deleteObject(item.model)
             table.remove(items_on_field, k)
