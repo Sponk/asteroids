@@ -1,5 +1,6 @@
 <Maratis version="3.0">
 
+<Game vertex_shader="../../../../" fragment_shader="../../../../"/>
 <Project>
 
 	<renderer name="StandardRenderer" />

@@ -3,6 +3,7 @@
 *.so*
 MaratisPlayer
 *.lnk
+logfile.txt
 maratis_log.txt
 published
 .directory

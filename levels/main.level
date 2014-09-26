@@ -184,14 +184,14 @@
 				shadow="true"
 				occluder="false" />
 		</Entity>
-		<Entity name="DefaultBullet" file="../meshs/bullet01.mesh">
-			<BoundingBox min="-2.155291 -2.155290 -2.155291" max="2.155292 2.155291 2.155291" />
+		<Entity name="DefaultBullet" file="../meshs/bullet02.mesh">
+			<BoundingBox min="-1.000000 -0.866025 -1.000000" max="1.000000 0.866025 1.000000" />
 			<anim id="0" />
 			<active value="true" />
 			<transform 
 				position="535.374573 532.110413 -179.365997"
 				rotation="0.000000 -0.000000 0.000000"
-				scale="1.000000 1.000000 1.000000" />
+				scale="2.273968 2.273968 2.273968" />
 			<properties 
 				invisible="true"
 				shadow="false"
