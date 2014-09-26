@@ -72,7 +72,7 @@ local playerData = {
     bullet_spread = 0,
     bullet_emission_count = 1,
     bullet_delay = 100,
-    max_bullet_distance = 500,
+    max_bullet_distance = 350,
     max_bullets_number = 100,
     
     default_enemy = getObject("Enemy1"),
@@ -311,12 +311,12 @@ function onSceneUpdate()
     -- Update all bullets
     for i = #bullets_on_field, 1, -1 do
         local bullet_data = bullets_on_field[i]
-        local position = getPosition(bullet_data.bullet)
-        
+        local position = getPosition(bullet_data.bullet)       
+       
         if length(position-playerPosition) > playerData.max_bullet_distance then
             deleteObject(bullet_data.bullet)
             table.remove(bullets_on_field, i)
-            return
+            --return
         else            
             if isCollisionTest(bullet_data.bullet) then               
                 
@@ -345,17 +345,9 @@ function onSceneUpdate()
                         return
                     end
                 end
-        
-                --if (not isCollisionBetween(player, bullet_data.bullet)) 
-                  --  or (not isCollisionBetween(player_bounding, bullet_data.bullet)) then
-                        --print("Destroying")
-                        --deleteObject(bullet_data.bullet)
-                        --table.remove(bullets_on_field, i)
-                        --return
-                --end
+            else
+                setPosition(bullet_data.bullet, position + bullet_data.direction)
             end
-            
-            setPosition(bullet_data.bullet, position + bullet_data.direction)
         end
     end
 end

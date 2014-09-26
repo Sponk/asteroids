@@ -128,17 +128,12 @@ vec4 blur(vec4 color, float strength)
 	return color /= vec4(8.0);
 }
 
-vec4 contrast(vec4 color, float amount)
-{
-        return ((color - 0.5f) * max(amount, 0)) + 0.5f;
-}
-
 void main()
 {
         if(blurStrength != 0.0)
         {
             fragmentColor = blur(vec4(1.0,1.0,1.0,1.0), blurStrength);
-            fragmentColor = contrast(fragmentColor, contrastFactor); // 1.30
+            fragmentColor = ((fragmentColor - 0.5f) * max(contrastFactor, 0)) + 0.5f;
             return;
         }
 
@@ -147,8 +142,8 @@ void main()
 	else
 		fragmentColor = texture(Texture[0], texcoord);
 	
-	// TODO: Make it controllable!
-        fragmentColor = contrast(fragmentColor, contrastFactor); // 1.15
+	// Contrast
+        fragmentColor = ((fragmentColor - 0.5f) * max(contrastFactor, 0)) + 0.5f;
 
 	gamma_correction();
 	fragmentColor.a = 1.0;
