@@ -27,18 +27,18 @@
 -- Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
 
 enemy01_statistics = {
-    {life = 5, speed = 2, damage = 5},
-    {life = 10, speed = 2, damage = 8},
-    {life = 12, speed = 3.0, damage = 8},
-    {life = 16, speed = 4.0, damage = 8},
-    {life = 20, speed = 4.5, damage = 8},
-    {life = 30, speed = 4.5, damage = 8},
-    {life = 35, speed = 4.5, damage = 8}
+    {life = 20, speed = 2, damage = 0.5},
+    {life = 30, speed = 2, damage = 0.5},
+    {life = 35, speed = 3.0, damage = 1},
+    {life = 40, speed = 3.5, damage = 1},
+    {life = 50, speed = 3.5, damage = 1},
+    {life = 60, speed = 3.5, damage = 1},
+    {life = 100, speed = 3.5, damage = 1}
 }
 
 weapon_crate_contents = {
-    {power = 2, speed = 5, delay = 100, spread = 2, emission_count = 4},
+    {power = 2, speed = 5, delay = 100, spread = 2, emission_count = 12},
     {power = 5, speed = 6, delay = 200, spread = 2, emission_count = 5},
-    {power = 8, speed = 6, delay = 400, spread = 4, emission_count = 5},
-    {power = 4, speed = 6, delay = 150, spread = 3, emission_count = 8}
+    {power = 20, speed = 6, delay = 400, spread = 4, emission_count = 4},
+    {power = 10, speed = 6, delay = 150, spread = 3, emission_count = 6}
 }

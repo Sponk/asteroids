@@ -111,14 +111,6 @@
 				angularDamping="0.010000"
 				angularFactor="0.000000"
 				linearFactor="1.000000 1.000000 1.000000" />
-			<constraint 
-				parent=""
-				pivot="0.000000 0.000000 0.000000"
-				lowerLinearLimit="0.000000 0.000000 0.000000"
-				upperLinearLimit="0.000000 0.000000 0.000000"
-				lowerAngularLimit="0.000000 0.000000 0.000000"
-				upperAngularLimit="0.000000 0.000000 0.000000"
-				disableParentCollision="true" />
 		</Entity>
 		<Entity name="GunExit" file="../meshs/box.mesh">
 			<BoundingBox min="-5.000000 -5.000000 -5.000000" max="5.000000 5.000000 5.000000" />

@@ -187,8 +187,8 @@ function onSceneUpdate()
             rotate(player, {0,0,-1}, 3)
         end
     
-        if getAxis("JOY1_AXIS_LEFTX") < -0.3 or getAxis("JOY1_AXIS_LEFTX") > 0.3 then
-            rotate(player, {0,0,1}, 3*-getAxis("JOY1_AXIS_LEFTX"))
+        if getAxis("JOY1_AXIS_RIGHTX") < -0.2 or getAxis("JOY1_AXIS_RIGHTX") > 0.2 then
+            rotate(player, {0,0,1}, 5*-getAxis("JOY1_AXIS_RIGHTX"))
         end
     end
         
@@ -207,7 +207,7 @@ function onSceneUpdate()
     setPosition(camera, playerPosition+{0,0,400})
     
     -- Shooting
-    if isKeyPressed("MOUSE_BUTTON_LEFT") or isKeyPressed("JOY1_BUTTON_A") then
+    if isKeyPressed("MOUSE_BUTTON_LEFT") or getAxis("JOY1_AXIS_TRIGGERRIGHT") > 0.3 then
         
         local time = getSystemTick()
         local emitted = false
@@ -320,7 +320,7 @@ function onSceneUpdate()
         else            
             if isCollisionTest(bullet_data.bullet) then               
                 
-                for j = 1, #enemies_on_field, 1 do
+                for j = #enemies_on_field, 1, -1 do
                     if isCollisionBetween(bullet_data.bullet, enemies_on_field[j].enemy) then
                         enemies_on_field[j].life = enemies_on_field[j].life - playerData.bullet_power
                         
@@ -336,13 +336,11 @@ function onSceneUpdate()
                                 playerData.enemy01_speed = enemy01_statistics[playerData.level].speed
                                 playerData.enemy01_damage = enemy01_statistics[playerData.level].damage
                             end        
-                        end            
-            
-                        j = #enemies_on_field + 1                       
-                        
+                        end           
+                       
                         deleteObject(bullet_data.bullet)
                         table.remove(bullets_on_field, i)
-                        return
+                        break;
                     end
                 end
             else
