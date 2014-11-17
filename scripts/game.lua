@@ -175,7 +175,7 @@ function onSceneUpdate()
             
         local point = getUnProjectedPoint(camera, vec3(mx, my, playerPos[3]))
 
-        local newRot = pointPair2Degrees(getPosition(player), point)
+        local newRot = pointPair2Degrees(getUnProjectedPoint(camera, vec3(0.5, 0.5, playerPos[3])), point)
         local rotation = getRotation(player)
         
         rotation[3] = newRot - 90
